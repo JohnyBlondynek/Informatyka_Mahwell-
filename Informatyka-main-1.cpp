@@ -13,8 +13,6 @@ int main() {
     
     cout << endl;
     cout << "Podana liczba:" << A1 << endl;
-    
-    //F*** my life
-    
+        
     return 0;
 }
