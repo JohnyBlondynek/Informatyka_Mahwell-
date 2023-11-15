@@ -35,13 +35,8 @@ void Zadanie2_Prostokat() {
 	{
 		for (int B = 0; B < Z2Szerokosc; B++)
 		{
-			if (A == 0) cout << "*";
-			else if (A == Z2Wysokosc-1) cout << "*";
-			else {
-				if (B == 0) cout << "*";
-				else if (B == Z2Szerokosc-1) cout << "*";
-				else cout << " ";
-			}
+			if (A == 0 || A == Z2Wysokosc - 1|| B == 0 || B == Z2Szerokosc - 1) cout << "*";
+			else cout << " ";
 		}
 		cout<<endl;
 	}
@@ -52,6 +47,8 @@ void Zadanie2_Prostokat() {
 //Zadnie 3
 int Z3Wysokosc;
 int Z3Szerokosc;
+bool DywanHask;
+bool DywanPoziomy;
 void zadanie3Dywan() {
 	cout << "Dywan:" << endl;
 	cout << "Podaj szerokość:";
@@ -60,22 +57,34 @@ void zadanie3Dywan() {
 	cin >> Z3Wysokosc;
 	cout << "==============================================" << endl;
 	cout << endl;
-	for (int A = 0; A < Z2Wysokosc; A++)
+	for (int  A = 0; A < Z3Wysokosc; A++)
 	{
-		for (int B = 0; B < Z2Szerokosc; B++)
+		for (int B = 0; B < Z3Szerokosc ; B++)
 		{
-			if (A == 0) cout << "*";
-			else if (A == Z2Wysokosc - 1) cout << "*";
+			if (A == 0 || A == Z3Wysokosc-1) cout << "-";
+			else if (B == 0 || B == Z3Szerokosc-1) cout << "|";
 			else {
-				if (B == 0) cout << "*";
-				else if (B == Z2Szerokosc - 1) cout << "*";
-				else cout << " ";
+				if (DywanHask) {
+					if (DywanPoziomy) cout << "#";
+					else cout << "*";
+				}
+				else {
+					if (DywanPoziomy) cout << "*";
+					else cout << "#";
+				}
 			}
+			if (DywanPoziomy)DywanPoziomy = false;
+			else DywanPoziomy = true;
 		}
+		if (DywanHask)DywanHask = false;
+		else DywanHask = true;
 		cout << endl;
 	}
 	cout << endl;
 	cout << "==============================================" << endl;
+}
+void Zadanie4_Bez_powtorzen() {
+
 }
 
 //Menu ustawienia
@@ -90,6 +99,7 @@ int main()
 		cout << "1:Tabliczka Mnożenia" << endl;
 		cout << "2:Prostokąt" << endl;
 		cout << "3:Dywan" << endl;
+		cout << "4:Bez powtorzeń" << endl;
 
 		cout << "7:Autor i data" << endl;
 		cout << "8:Wyjdz" << endl;
@@ -107,6 +117,10 @@ int main()
 		case 3:
 			system("cls");
 			zadanie3Dywan();
+			break;
+		case 4:
+			system("cls");
+			Zadanie4_Bez_powtorzen();
 			break;
 		case 7:
 			system("cls");
