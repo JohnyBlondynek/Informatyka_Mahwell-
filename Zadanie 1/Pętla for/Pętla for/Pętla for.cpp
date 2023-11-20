@@ -6,7 +6,6 @@ using namespace std;
 //Menu ustawienia lub programu
 bool Program = true;
 int WyborForaPogramatora;
-int Errors = 0;
 
 void Zadanie1_Tabliczka_mnozenia() {
 	cout << "Tabliczka mnożenia:" << endl;
@@ -23,7 +22,6 @@ void Zadanie1_Tabliczka_mnozenia() {
 		cout << endl;
 	}
 	cout << "==============================================" << endl;
-	if (Errors > 0)Errors--;
 }
 
 //Zadanie 2
@@ -53,7 +51,6 @@ void Zadanie2_Prostokat() {
 		cout << "==============================================" << endl;
 	}
 	cout << endl;
-	if (Errors > 0)Errors--;
 }
 
 //Zadnie 3
@@ -99,11 +96,12 @@ void zadanie3Dywan() {
 		cout << "==============================================" << endl;
 	}
 	cout << endl;
-	if(Errors>0)Errors--;
 }
 
 void Zadanie4_Bez_powtorzen() {
-	if (Errors > 0)Errors--;
+	cout << "Ten program nie został stworzony :(" << endl;
+	Sleep(5000);
+	system("cls");
 }
 
 //Zadanie 5
@@ -138,7 +136,6 @@ void Zadanie5_Odwrocony_trojkat() {
 		cout << "==============================================" << endl;
 	}
 	cout << endl;
-	if (Errors > 0)Errors--;
 }
 
 //Zadanie 6
@@ -192,7 +189,6 @@ void Zadanie6_Tabliczka_mnozenia_z_obramowaniem() {
 		cout << "==============================================" << endl;
 	}
 	cout << endl;
-	if (Errors > 0)Errors--;
 }
 
 int main()
@@ -204,7 +200,7 @@ int main()
 		cout << "1:Tabliczka Mnożenia." << endl;
 		cout << "2:Prostokąt." << endl;
 		cout << "3:Dywan." << endl;
-		//cout << "4:Bez powtorzeń" << endl;
+		cout << "4:Bez powtorzeń" << endl;
 		cout << "5:Odwrócony trójkąt." << endl;
 		cout << "6:Tabliczka mnożenia z obramowaniem." << endl;
 		cout << "7:Autor i data." << endl;
@@ -224,10 +220,10 @@ int main()
 			system("cls");
 			zadanie3Dywan();
 			break;
-		/*case 4:
+		case 4:
 			system("cls");
 			Zadanie4_Bez_powtorzen();
-			break;*/
+			break;
 		case 5:
 			system("cls");
 			Zadanie5_Odwrocony_trojkat();
